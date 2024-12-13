@@ -1,0 +1,72 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    border-radius: 10px;
+    margin: 30px auto;
+    animation: fadeIn 2s ease-out; 
+    animation: gradientBG 15s ease infinite;
+    backdrop-filter: blur(10px); 
+    background-size: 400% 400%;
+}
+
+.home-title {
+    color: black;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1s ease-out; 
+}
+
+.home-description {
+    color: black;
+    line-height: 1.6;
+    animation: slideInFromRight 1s ease-out; 
+}
+
+.home-nav-links {
+    margin-top: 30px;
+}
+
+.home-nav-link {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    font-weight: bold;
+    display: inline-block; 
+    animation: popIn 0.5s ease; 
+}
+
+.home-nav-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
