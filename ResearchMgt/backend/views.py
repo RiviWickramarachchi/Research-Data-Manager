@@ -45,9 +45,9 @@ def add_post_address(request):
 
         # Get the current user's profile
         profile = request.user.profile
-
+        print("abs")
         # Check if the address already exists in the profile
-        if profile.post_addresses.filter(addressId=address_id).exists():
+        if profile.paper_detail_addresses.filter(addressId=address_id).exists():
             return Response({'error': 'Address already exists in the profile.'}, status=status.HTTP_400_BAD_REQUEST)
 
         # If the address doesn't exist, create a new Address instance
@@ -98,7 +98,7 @@ def update_addressViewStat(request, address_id):
 def get_addresses(request):
     if request.method == 'GET':
         profile = request.user.profile
-        post_addresses = [address for address in profile.post_addresses.all()]
+        post_addresses = [address for address in profile.paper_detail_addresses.all()]
         #post_addresses = [address.addressId for address in profile.post_addresses.all()]
         #view_status = [address.hasViewedData for address in profile.post_addresses.all()]
         response_dict = {}

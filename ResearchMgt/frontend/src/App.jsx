@@ -1,10 +1,11 @@
 import './App.css'
+import { useEffect, useState } from 'react'
 //import { ethers } from "ethers";
 
 import React from 'react'
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
-//import PrivateRoute from "./utils/PrivateRoute"
+import PrivateRoute from "./utils/PrivateRoute"
 import { AuthProvider } from './context/AuthContext'
 
 //pages
@@ -15,6 +16,10 @@ import Home from './pages/Home';
 import MyPage from './pages/MyPage';
 
 function App() {
+  const [contractState, setContractState] = useState({});
+  useEffect(()=>{
+    console.log("contractState" + contractState);
+  }, [setContractState])
 
   return (
     <Router>
