@@ -42,12 +42,12 @@ const ShowData=({state})=> {
                 <Card.Body>
                   <Card.Title>{dta.name}</Card.Title>
                   <Card.Text>
+                  <Card.Text>
+                       {dta.data}
+                  </Card.Text>
                   <a href={dta.fileHash} onClick={handleLinkClick.bind(null,dta.dataId)} > Click the Link To View Data</a>
                   </Card.Text>
-                  <Card.Text>
-                       Bool Of User Post Address
-                  </Card.Text>
-                  <Button variant="primary">View</Button>
+                  {/*<Button variant="primary">View</Button>*/}
                 </Card.Body>
               </Card>
             ))}
